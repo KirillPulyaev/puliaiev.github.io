@@ -1,2 +1,1 @@
-# puliaiev.github.io
-My project
+# Project
