@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
+
+/* 
+  font-family: "Secular One", serif;
+  font-family: "PT Sans", serif;
+  font-family: "Fira Sans Condensed", serif;
+*/
+
+body{
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.container{
+    max-width: 1920px;
+}
+
+/* header */
+
+.header {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 2fr 1fr 2.5fr 0.5fr;
+  grid-template-areas: ". logo nav search";
+
+  /* grid-template: "logo nav search" max-content / 1fr 1fr 100px; */
+  align-items: center;
+  justify-items: start;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+
+.logo {
+  grid-area: logo;
+  justify-self: start;
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  color: #EB564F;
+  font-size: 24px;
+  width: 150px;
+  line-height: 1;
+  transition: color 0.3s;
+
+}
+
+.header__nav {
+  grid-area: nav;
+  transform: translateX(-15px);
+
+}
+
+.header__nav ul{
+  display: flex;
+  gap: 10px;
+}
+
+.header__nav a{
+  padding: 15px;
+  transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+}
+
+/* .header__nav a:first-child{
+  padding-left: 0;
+} */
+
+.header__nav a:hover, .logo:hover{
+  color: #54B9B4;
+}
+
+.header__nav a:active{
+  color: #44A7A2;
+}
+
+.header__nav a::after{
+  content: "";
+  display: block;
+  width: 80%;
+  height: 100%;
+  background-color: #54B9B4;
+  position: absolute;
+  left: 15px;
+  bottom: -200%;
+  transition: bottom 0.5s, background-color 0.2s;
+}
+
+
+.header__nav a:hover::after{
+
+  bottom: -80%;
+
+}
+
+.header__nav a:active::after{
+  background-color: #44A7A2;
+}
+
+.header__search {
+  grid-area: search;
+
+}
+
+.header__icon {
+  transition: fill 0.3s;
+}
+
+.header__icon:hover{
+  fill: #54B9B4;
+}
+
+.header__icon:active{
+  fill: #44A7A2;
+}
+
+/* main */
+
+.main {
+  display: grid;
+  grid-template:"slider-arrows healthy thirsty thirsty" 3fr
+                "slider-arrows healthy slider-dots orange" 1fr
+                "freshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;
+}
+
+/* slider arrows */
+
+.slider-arrows {
+  grid-area: slider-arrows;
+  position: relative;
+}
+
+.slider-arrows__items-wrappers {
+  width: 100%;
+  height: 100%;
+  filter: brightness(90%);
+
+  display: flex;
+}
+
+.slider-arrows__item {
+
+}
+
+.slider-arrows__nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transform: translateY(-50%);
+}
+
+.slider-arrows__arrow {
+  color: #fff;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.2s;
+}
+
+.slider-arrows__arrow:hover{
+  opacity: 0.8;
+}
+
+.slider-arrows__arrow:active{
+  opacity: 0.6;
+}
+
+.slider-arrows__arrow--left {
+
+}
+
+.btn {
+  color: #fff;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: opacity 0.2s;
+
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.btn:active{
+  opacity: 0.6;
+}
+
+.slider-arrows__btn {
+
+}
+
+.slider-arrows__arrow--right {
+
+}
+
+/* slider dots */
+
+.slider__dots {
+  grid-area: slider-dots;
+  position: relative;
+}
+
+.slider-dots__items-wrappers {
+
+  width: 100%;
+  height: 100%;
+  filter: brightness(90%);
+
+  display: flex;
+  
+}
+
+.slider-dots__item {
+
+}
+
+.slider-dots__btn-wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+
+}
+
+.slider-dots__btn {
+
+}
+
+.slider-dots__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  
+}
+
+.slider-dots__nav-item {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: opacity 0.2s;
+
+}
+
+.slider-dots__nav-item:hover{
+  opacity: 0.8;
+}
+
+.slider-dots__nav-item:active{
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.slider-dots__nav--active {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.slider-dots__nav--active:hover{
+  opacity: 0.6;
+}
+
+/* freshy */
+
+.freshy {
+  grid-area: freshy;
+  background-color: #BEE163;
+}
+
+.common {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px ;
+}
+
+.title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 24px;
+  width: 140px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.title  span{
+  display: block;
+  font-size: 60px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.title span::first-line{
+  font-weight: 900;
+}
+
+.common__desc {
+  max-width: 60%;
+  hyphens: auto;
+}
+
+/* healthy and thirsty*/
+
+.healthy {
+  grid-area: healthy;
+  background-color: #FF494B;
+  padding-bottom: 65px;
+}
+
+
+.common--col-rev {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+.common--col-rev .common__desc{
+  max-width: 140px;
+}
+
+.common__desc {
+
+}
+
+.thisrty {
+  grid-area: thirsty;
+  background-color: #FFBA4A;
+}
+
+.common--row-rew {
+  flex-direction: row-reverse;
+
+}
+
+.common--row-rew .common__desc{
+  text-align: right;
+}
+
+.thisrty .common__desc{
+  max-width: 200px;
+}
+
+/* orange */
+
+.orange {
+  grid-area: orange;
+  position: relative;
+}
+
+.slider-orange__item {
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+}
+
+.orange__btn-wrapper {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+/* 
+  transform: translate(-50%,-50%); */
+}
+
+
+.orange__nav {
+
+}
+
+.orange__arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: 0.2s opacity;
+}
+
+.orange__arrow:hover{
+  opacity: 0.8;
+}
+
+.orange__arrow:active{
+  opacity: 0.6;
+}
